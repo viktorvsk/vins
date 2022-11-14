@@ -1,0 +1,73 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: 2.7
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  SuggestExtensions: false
+  NewCops: enable
+  Exclude:
+    - 'vendor/bundle/**/*'
+    - 'db/migrate/**/*'
+
+Layout/LineLength:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+Style/StringLiteralsInInterpolation:
+  Enabled: false
+
+### Shopify bad styles
+
+Style/SymbolArray:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+Naming/InclusiveLanguage:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+### Shopify bad spec styles
+
+RSpec/ContextWording:
+  Enabled: false
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/MessageSpies:
+  Enabled: false
+RSpec/StubbedMock:
+  Enabled: false
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/RepeatedExample:
+  Enabled: false
+RSpec/LetSetup:
+  Enabled: false
+RSpec/SubjectStub:
+  Enabled: false
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+RSpec/MessageChain:
+  Enabled: false
+RSpec/ExpectInHook:
+  Enabled: false
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+### New version
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false # too many noise at the moment
